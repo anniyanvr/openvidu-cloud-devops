@@ -1,0 +1,9 @@
+export OPENVIDU_VERSION=2.11.0
+export PUBLIC_URL=YOUR_URL
+export PUBLIC_IP=YOUR_IP
+export PROG_OPTS="\
+    -Dopenvidu.secret=YOUR_SECRET \
+    -Dopenvidu.publicurl=https://${PUBLIC_URL}:4443/ \
+    -Dserver.port=4443"
+export OPENVIDU_RECORDINGS_DIR=$HOME/openvidu-records/
+export KMS_STUN_PORT=3478

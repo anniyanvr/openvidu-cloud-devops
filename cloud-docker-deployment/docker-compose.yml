@@ -1,0 +1,18 @@
+version: '3'
+services:
+    openvidu:
+        container_name: openvidu
+        image: openvidu-server
+        environment:
+            - PROG_OPTS=${PROG_OPTS}
+            - KMS_STUN_PORT=${KMS_STUN_PORT}
+        network_mode: host
+        volumes:
+            - $HOME/openvidu-records/:/opt/openvidu/spring-cloud/config-repo
+    kms:
+        container_name: kurento
+        image: kurento/kurento-media-server:${KMS_VERSION}
+        environment:
+            - KMS_STUN_IP=${PUBLIC_IP}
+            - KMS_STUN_PORT=${KMS_STUN_PORT}
+        network_mode: host
