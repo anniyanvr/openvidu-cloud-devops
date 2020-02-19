@@ -336,6 +336,14 @@ Resources:
               mode: "000755"
               owner: "root"
               group: "root"
+            '/etc/ansible/ansible.cfg':
+              content: |
+                [defaults]
+                stdout_callback=yaml
+                bin_ansible_callbacks = True
+              mode: "000400"
+              owner: "root"
+              group: "root"
             '/usr/local/bin/cloneRepo.sh':
               content: |
                 #!/bin/bash
